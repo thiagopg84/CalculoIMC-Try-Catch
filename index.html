@@ -34,6 +34,7 @@
             let altura;
             let peso;
             let aluno;
+            let idade;
 
             (function getNome() {
                 nome = window.prompt('Digite o nome do aluno: ');
@@ -106,7 +107,7 @@
 
         (function compararDados() {
             for (let i = 0; i < alunos.length; i++) {
-                console.log("O aluno " + alunos[i].nome + " tem indice IMC de " + alunos[i].imc);
+                console.log("O aluno " + alunos[i].nome + " tem indice IMC de " + (alunos[i].imc).toFixed(2));
                 if (alunos[i].imc < 18.5) {
                     console.log('Alerta: o índice IMC do aluno ' + alunos[i].nome + ' indica magreza');
                 } else if (alunos[i].imc >= 25 && alunos[i].imc <= 29.9) {
@@ -126,7 +127,7 @@
                 let alunoMaxIMC = alunos.find(function(o) {
                     return o.imc == maxIMC; 
                 })
-                console.log(alunoMaxIMC.nome + ' é o aluno com maior IMC: ' + alunoMaxIMC.imc);
+                console.log(alunoMaxIMC.nome + ' é o aluno com maior IMC: ' + (alunoMaxIMC.imc).toFixed(2));
             }
         
             let getMinIMC = function() {
@@ -137,13 +138,13 @@
                 let alunoMinIMC = alunos.find(function(o) {
                     return o.imc == minIMC; 
                 })
-                console.log(alunoMinIMC.nome + ' é o aluno com menor IMC: ' + alunoMinIMC.imc);
+                console.log(alunoMinIMC.nome + ' é o aluno com menor IMC: ' + (alunoMinIMC.imc).toFixed(2));
             }
         
             getMaxIMC();
             getMinIMC();
         
-            console.log("A altura média é de " + (((alturaEstudantes/alunos.length))/100) + "m.");
+            console.log("A altura média é de " + ((((alturaEstudantes/alunos.length))/100)).toFixed(2) + "m.");
         })();
     })();
     </script>
